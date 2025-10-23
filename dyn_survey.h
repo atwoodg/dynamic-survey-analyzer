@@ -2,7 +2,10 @@
 #define _DYN_SURVEY_H_
 
 /* add your library includes, constants and typedefs here*/
-
+typedef struct{
+    char **array;
+    int size;
+} Strings;
 
 
 #endif

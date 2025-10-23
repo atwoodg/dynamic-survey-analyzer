@@ -13,3 +13,12 @@ void *emalloc(size_t n) {
 
     return p;
 }
+
+void *erealloc(void *ptr, size_t n) {
+    void *p = realloc(ptr, n);
+    if (p == NULL) {
+        fprintf(stderr, "realloc of %zu bytes failed\n", n);
+        exit(1);
+    }
+    return p;
+}
