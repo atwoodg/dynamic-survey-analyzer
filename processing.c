@@ -64,7 +64,6 @@ void averages(Response responses, Response questions, Response options, int **pr
 
     for (int q = 0; q < questions.size; q++) {
         avgs[q][0] = 0;
-        int total = 0;
 
         for (int i = 0; i < options.size; i++) {
             avgs[q][0] += proportions[q][i]*(i+1);

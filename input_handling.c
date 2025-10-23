@@ -21,9 +21,6 @@ int format(Response lines) {
         fmt[i] = atoi(token);
         token = strtok(NULL, delimiter);
     }
-    printf("%d", fmt[0]);
-    printf("%d", fmt[1]);
-    printf("%d", fmt[2]);
     //Finding format
     if (fmt[0] == 1 && fmt[1] == 0 && fmt[2] == 0) return 1;
     else if (fmt[0] == 0 && fmt[1] == 1 && fmt[2] == 0) return 2;

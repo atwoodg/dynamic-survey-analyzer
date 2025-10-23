@@ -1,6 +1,8 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "dyn_survey.h"
 #include "processing.h"
+#include "emalloc.h"
 #include "output.h"
 /* output.c */
 
@@ -28,7 +30,10 @@ void output100(Response responses, Response questions, Response options, int **p
 }
 
 void output010(Response responses, Response questions, Response options, int **props) {
-    double avgs[questions.size][1];
+    double **avgs = emalloc(questions.size * sizeof(double *));
+    for (int i = 0; i < questions.size; i++){
+        avgs[i] = emalloc(1*sizeof(double));
+    }
     averages(responses, questions, options, props, avgs);
 
     printf("#####\n");
@@ -37,12 +42,17 @@ void output010(Response responses, Response questions, Response options, int **p
     for (int q = 0; q < questions.size; q++) {
         printf("%d. %s - %.2f\n", q + 1, questions.array[q], avgs[q][0]);
     }
-    printf("\n");
+
+    for (int i = 0; i < questions.size; i++){
+        free(avgs[i]);
+    }
+
+    free(avgs);
 }
 
 void output001(Response programs, Response residency, int prog[programs.size], int res[residency.size], int survey_size) {
     printf("#####\n");
-    printf("FOR EACH DEMOGRAPHIC CATEGORY BELOW, RELATIVE FREQUENCIES ARE COMPUTED FOR EACH ATTRIBUTE VALUE\n\n");
+    printf("FOR EACH DEMOGRAPHIC CATEGORY BELOW, RELATIVE PERCENTUAL FREQUENCIES ARE COMPUTED FOR EACH ATTRIBUTE VALUE\n\n");
     printf("UNDERGRADUATE PROGRAM\n");
 
     for (int d = 0; d < programs.size; d++) {
@@ -50,7 +60,7 @@ void output001(Response programs, Response residency, int prog[programs.size], i
         printf("%.2f: %s\n", num, programs.array[d]);
     }
 
-    printf("\nRESIDENCE STATUS \n");
+    printf("\nRESIDENCE STATUS\n");
 
     for (int r = 0; r < residency.size; r++) {
         double num = ((double) res[r] / survey_size) * 100.0;;
@@ -91,6 +101,7 @@ void output(int format, Response responses, Response questions, Response options
             outputInfo(responses);
             output100(responses, questions, options, props);
             output010(responses, questions, options, props);
+            printf("\n");
             output001(programs, residency, prog, res, survey_size);
             break;
     }
