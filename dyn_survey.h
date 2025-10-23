@@ -5,7 +5,7 @@
 typedef struct{
     char **array;
     int size;
-} Strings;
+} Response;
 
 
 #endif

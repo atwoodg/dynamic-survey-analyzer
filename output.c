@@ -4,7 +4,7 @@
 #include "output.h"
 /* output.c */
 
-void outputInfo(Strings responses) {
+void outputInfo(Response responses) {
 
     printf("ECS Student Survey\n");
     printf("SURVEY RESPONSE STATISTICS\n\n");
@@ -12,7 +12,7 @@ void outputInfo(Strings responses) {
 
 }
 
-void output100(Strings responses, Strings questions, Strings options, int props[questions.size][options.size]) {
+void output100(Response responses, Response questions, Response options, int **props) {
 
     printf("#####\n");
     printf("FOR EACH QUESTION/ASSERTION BELOW, RELATIVE PERCENTUAL FREQUENCIES ARE COMPUTED FOR EACH LEVEL OF AGREEMENT\n\n");
@@ -27,7 +27,7 @@ void output100(Strings responses, Strings questions, Strings options, int props[
     }
 }
 
-void output010(Strings responses, Strings questions, Strings options, int props[questions.size][options.size]) {
+void output010(Response responses, Response questions, Response options, int **props) {
     double avgs[questions.size][1];
     averages(responses, questions, options, props, avgs);
 
@@ -40,26 +40,25 @@ void output010(Strings responses, Strings questions, Strings options, int props[
     printf("\n");
 }
 
-void output001(Strings programs, Strings residency, int prog[programs.size], int res[residency.size]) {
+void output001(Response programs, Response residency, int prog[programs.size], int res[residency.size], int survey_size) {
     printf("#####\n");
-    printf("FOR EACH DEMOGRAPHIC CATEGORY BELOW, RELATIVE PERCENTUAL FREQUENCIES ARE COMPUTED FOR EACH ATTRIBUTE VALUE\n\n");
+    printf("FOR EACH DEMOGRAPHIC CATEGORY BELOW, RELATIVE FREQUENCIES ARE COMPUTED FOR EACH ATTRIBUTE VALUE\n\n");
     printf("UNDERGRADUATE PROGRAM\n");
 
     for (int d = 0; d < programs.size; d++) {
-        double num = (double) prog[d]*10;
+        double num = ((double) prog[d] / survey_size) * 100.0;
         printf("%.2f: %s\n", num, programs.array[d]);
     }
 
-    printf("\nRESIDENCE STATUS\n");
+    printf("\nRESIDENCE STATUS \n");
 
     for (int r = 0; r < residency.size; r++) {
-        double num = (double) res[r]*10;
+        double num = ((double) res[r] / survey_size) * 100.0;;
         printf("%.2f: %s\n", num, residency.array[r]);
     }
-
 }
 
-void output(int format, Strings responses, Strings questions, Strings options, int props[questions.size][options.size], Strings programs, Strings residency, int prog[programs.size], int res[residency.size]) {
+void output(int format, Response responses, Response questions, Response options, int **props, Response programs, Response residency, int *prog, int *res, int survey_size) {
     switch (format) {
         case 1:
             outputInfo(responses);
@@ -71,17 +70,17 @@ void output(int format, Strings responses, Strings questions, Strings options, i
             break;
         case 3:
             outputInfo(responses);
-            output001(programs, residency, prog, res);
+            output001(programs, residency, prog, res, survey_size);
             break;
         case 4:
             outputInfo(responses);
             output010(responses, questions, options, props);
-            output001(programs, residency, prog, res);
+            output001(programs, residency, prog, res, survey_size);
             break;
         case 5:
             outputInfo(responses);
             output100(responses, questions, options, props);
-            output001(programs, residency, prog, res);
+            output001(programs, residency, prog, res, survey_size);
             break;
         case 6:
             outputInfo(responses);
@@ -92,7 +91,7 @@ void output(int format, Strings responses, Strings questions, Strings options, i
             outputInfo(responses);
             output100(responses, questions, options, props);
             output010(responses, questions, options, props);
-            output001(programs, residency, prog, res);
+            output001(programs, residency, prog, res, survey_size);
             break;
     }
 }

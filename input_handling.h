@@ -4,7 +4,7 @@
 
 /* add your include and prototypes here*/
 
-int format(Strings lines);
-Strings tokenize(char *line, char delimeter[]);
+int format(Response lines);
+Response tokenize(char *line, char delimeter[]);
 
 #endif

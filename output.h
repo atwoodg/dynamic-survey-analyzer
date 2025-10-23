@@ -3,10 +3,10 @@
 #include "dyn_survey.h"
 
 /* add your include and prototypes here*/
-void outputInfo(Strings responses);
-void output100(Strings responses, Strings questions, Strings options, int props[questions.size][options.size]);
-void output010(Strings responses, Strings questions, Strings options, int props[questions.size][options.size]);
-void output001(Strings programs, Strings residency, int prog[programs.size], int res[residency.size]);
-void output(int format, Strings responses, Strings questions, Strings options, int props[questions.size][options.size], Strings programs, Strings residency, int prog[programs.size], int res[residency.size]);
+void outputInfo(Response responses);
+void output100(Response responses, Response questions, Response options, int **props);
+void output010(Response responses, Response questions, Response options, int **props);
+void output001(Response programs, Response residency, int prog[programs.size], int res[residency.size], int survey_size);
+void output(int format, Response responses, Response questions, Response options, int **props, Response programs, Response residency, int *prog, int *res, int survey_size);
 
 #endif
