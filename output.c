@@ -6,6 +6,7 @@
 #include "output.h"
 /* output.c */
 
+//Basic output header
 void outputInfo(Response responses) {
 
     printf("ECS Student Survey\n");
@@ -14,6 +15,7 @@ void outputInfo(Response responses) {
 
 }
 
+//prints format for 1,0,0
 void output100(Response responses, Response questions, Response options, int **props) {
 
     printf("#####\n");
@@ -29,6 +31,7 @@ void output100(Response responses, Response questions, Response options, int **p
     }
 }
 
+//prints format for 0,1,0
 void output010(Response responses, Response questions, Response options, int **props) {
     double **avgs = emalloc(questions.size * sizeof(double *));
     for (int i = 0; i < questions.size; i++){
@@ -50,6 +53,7 @@ void output010(Response responses, Response questions, Response options, int **p
     free(avgs);
 }
 
+//Prints format for 0,0,1
 void output001(Response programs, Response residency, int prog[programs.size], int res[residency.size], int survey_size) {
     printf("#####\n");
     printf("FOR EACH DEMOGRAPHIC CATEGORY BELOW, RELATIVE PERCENTUAL FREQUENCIES ARE COMPUTED FOR EACH ATTRIBUTE VALUE\n\n");
@@ -68,6 +72,8 @@ void output001(Response programs, Response residency, int prog[programs.size], i
     }
 }
 
+
+//Determines correct output format and prints to terminal
 void output(int format, Response responses, Response questions, Response options, int **props, Response programs, Response residency, int *prog, int *res, int survey_size) {
     switch (format) {
         case 1:

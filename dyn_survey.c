@@ -42,6 +42,7 @@ int main() {
         responses.size++;
     }
 
+    //Allocating 2D arrays
     int **props = emalloc(questions.size * sizeof(int*));
     for (int i = 0; i < questions.size; i++) {
         props[i] = emalloc(options.size * sizeof(int));
@@ -54,11 +55,13 @@ int main() {
     program_proportions(responses, programs, 0, program_props);
     program_proportions(responses, residency, 1, residency_props);
 
+    //Generating output based on format
     output(fmt, responses, questions, options, props, programs, residency, program_props, residency_props, survey_size);
 
     for (int i = 0; i < questions.size; i++) {
         free(props[i]);
     }
+
     free(props);
     free(residency_props);
     free(program_props);

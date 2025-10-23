@@ -8,6 +8,7 @@
 
 /* processing.c */
 
+//computes the proportions array for students programs and residencies for output
 void program_proportions(Response responses, Response categories, int index, int props[]) {
     // Initialize counts
     for (int i = 0; i < categories.size; i++) {
@@ -32,6 +33,7 @@ void program_proportions(Response responses, Response categories, int index, int
     }
 }
 
+//computes proporitons for questions and their answers
 void question_proportions(Response responses, Response questions, Response options, int **proportions) {
 
     //Filling prop with 0's
@@ -60,14 +62,14 @@ void question_proportions(Response responses, Response questions, Response optio
     }
 }
 
-void averages(Response responses, Response questions, Response options, int **proportions, double **avgs) {
 
+void averages(Response responses, Response questions, Response options, int **proportions, double **avgs) {
+    //filling averages with 0's and computing
     for (int q = 0; q < questions.size; q++) {
         avgs[q][0] = 0;
 
         for (int i = 0; i < options.size; i++) {
             avgs[q][0] += proportions[q][i]*(i+1);
-            //total += proportions[q][i];
         }
         avgs[q][0] = avgs[q][0]/(responses.size);
     }
