@@ -1,0 +1,223 @@
+Assignment 2 Grading:
+---------------------
+Student gabrielatwood
+Grade: 
+
+Make output:
+make: Entering directory '/home/mosi/Desktop/OneDrive_2025-11-03(1) (1)/SENG 265 TA/a2/a1-grading/repos/gabrielatwood'
+gcc -c -Wall -g -DDEBUG -D_GNU_SOURCE -std=c11 -O0 dyn_survey.c
+gcc -c -Wall -g -DDEBUG -D_GNU_SOURCE -std=c11 -O0 emalloc.c
+gcc -c -Wall -g -DDEBUG -D_GNU_SOURCE -std=c11 -O0 input_handling.c
+gcc -c -Wall -g -DDEBUG -D_GNU_SOURCE -std=c11 -O0 processing.c
+gcc -c -Wall -g -DDEBUG -D_GNU_SOURCE -std=c11 -O0 output.c
+gcc dyn_survey.o emalloc.o input_handling.o processing.o output.o -o dyn_survey
+make: Leaving directory '/home/mosi/Desktop/OneDrive_2025-11-03(1) (1)/SENG 265 TA/a2/a1-grading/repos/gabrielatwood'
+make: Warning: File 'makefile' has modification time 26984 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+
+
+Tests results:
+
+Test 1: Failed
+13c13
+< 30.00: agree
+---
+> 0.00: agree
+19c19
+< 70.00: agree
+---
+> 0.00: agree
+25c25
+< 40.00: agree
+---
+> 0.00: agree
+31c31
+< 70.00: agree
+---
+> 0.00: agree
+37c37
+< 60.00: agree
+---
+> 0.00: agree
+43c43
+< 20.00: agree
+---
+> 0.00: agree
+49c49
+< 50.00: agree
+---
+> 0.00: agree
+55c55
+< 60.00: agree
+---
+> 0.00: agree
+61c61
+< 20.00: agree
+---
+> 0.00: agree
+67c67
+< 60.00: agree
+---
+> 0.00: agree
+73c73
+< 50.00: agree
+---
+> 0.00: agree
+76,78c76,78
+< 10.00: disagree
+< 20.00: partially disagree
+< 20.00: partially agree
+---
+> 0.00: disagree
+> 0.00: partially disagree
+> 0.00: partially agree
+84,95c84,95
+< 1. My studies contributed to develop skills and knowledge for employment - 2.70
+< 2. My studies contributed to develop effective study and learning skills - 3.30
+< 3. My studies contributed to develop time management skills - 2.60
+< 4. My studies contributed to thinking logically and analytically - 3.30
+< 5. My studies contributed to dealing successfully with obstacles to achieve an objective - 3.20
+< 6. My studies contributed to develop knowledge of career options - 2.50
+< 7. My studies contributed to develop ability to find and use information - 2.90
+< 8. My studies contributed to develop self-confidence - 3.30
+< 9. My studies contributed to develop ability to interact with people from backgrounds different from my own - 2.30
+< 10. My studies contributed to develop ability to evaluate my own strengths and weaknesses - 3.10
+< 11. My studies contributed to thinking creatively to find ways to achieve an objective - 2.70
+< 12. My studies contributed to develop persistence with difficult tasks - 3.10
+---
+> 1. My studies contributed to develop skills and knowledge for employment - 1.50
+> 2. My studies contributed to develop effective study and learning skills - 0.50
+> 3. My studies contributed to develop time management skills - 1.00
+> 4. My studies contributed to thinking logically and analytically - 0.50
+> 5. My studies contributed to dealing successfully with obstacles to achieve an objective - 0.80
+> 6. My studies contributed to develop knowledge of career options - 1.70
+> 7. My studies contributed to develop ability to find and use information - 0.90
+> 8. My studies contributed to develop self-confidence - 0.90
+> 9. My studies contributed to develop ability to interact with people from backgrounds different from my own - 1.50
+> 10. My studies contributed to develop ability to evaluate my own strengths and weaknesses - 0.70
+> 11. My studies contributed to thinking creatively to find ways to achieve an objective - 0.70
+> 12. My studies contributed to develop persistence with difficult tasks
+ - 2.00
+
+Test 2: Failed
+17c17
+< 20.00: Software Engineering
+---
+> 0.00: Software Engineering
+22c22
+< 40.00: International Student
+---
+> 0.00: International Student
+
+Test 3: Failed
+13c13
+< 30.00: agree
+---
+> 0.00: agree
+19c19
+< 70.00: agree
+---
+> 0.00: agree
+25c25
+< 40.00: agree
+---
+> 0.00: agree
+31c31
+< 70.00: agree
+---
+> 0.00: agree
+37c37
+< 60.00: agree
+---
+> 0.00: agree
+43c43
+< 20.00: agree
+---
+> 0.00: agree
+49c49
+< 50.00: agree
+---
+> 0.00: agree
+55c55
+< 60.00: agree
+---
+> 0.00: agree
+61c61
+< 20.00: agree
+---
+> 0.00: agree
+67c67
+< 60.00: agree
+---
+> 0.00: agree
+73c73
+< 50.00: agree
+---
+> 0.00: agree
+76,78c76,78
+< 10.00: disagree
+< 20.00: partially disagree
+< 20.00: partially agree
+---
+> 0.00: disagree
+> 0.00: partially disagree
+> 0.00: partially agree
+84,95c84,95
+< 1. My studies contributed to develop skills and knowledge for employment - 2.70
+< 2. My studies contributed to develop effective study and learning skills - 3.30
+< 3. My studies contributed to develop time management skills - 2.60
+< 4. My studies contributed to thinking logically and analytically - 3.30
+< 5. My studies contributed to dealing successfully with obstacles to achieve an objective - 3.20
+< 6. My studies contributed to develop knowledge of career options - 2.50
+< 7. My studies contributed to develop ability to find and use information - 2.90
+< 8. My studies contributed to develop self-confidence - 3.30
+< 9. My studies contributed to develop ability to interact with people from backgrounds different from my own - 2.30
+< 10. My studies contributed to develop ability to evaluate my own strengths and weaknesses - 3.10
+< 11. My studies contributed to thinking creatively to find ways to achieve an objective - 2.70
+< 12. My studies contributed to develop persistence with difficult tasks - 3.10
+---
+> 1. My studies contributed to develop skills and knowledge for employment - 1.50
+> 2. My studies contributed to develop effective study and learning skills - 0.50
+> 3. My studies contributed to develop time management skills - 1.00
+> 4. My studies contributed to thinking logically and analytically - 0.50
+> 5. My studies contributed to dealing successfully with obstacles to achieve an objective - 0.80
+> 6. My studies contributed to develop knowledge of career options - 1.70
+> 7. My studies contributed to develop ability to find and use information - 0.90
+> 8. My studies contributed to develop self-confidence - 0.90
+> 9. My studies contributed to develop ability to interact with people from backgrounds different from my own - 1.50
+> 10. My studies contributed to develop ability to evaluate my own strengths and weaknesses - 0.70
+> 11. My studies contributed to thinking creatively to find ways to achieve an objective - 0.70
+> 12. My studies contributed to develop persistence with difficult tasks
+ - 2.00
+108c108
+< 20.00: Software Engineering
+---
+> 0.00: Software Engineering
+113c113
+< 40.00: International Student
+---
+> 0.00: International Student
+
+
+Tests Feedback:
+0/3 Tests passed.
+
+Committing practices:
+ee099f3	Gabriel Atwood	Wed Oct 22 21:58:35 2025 -0700	Final comments and adjustments
+6eec7de	Gabriel Atwood	Wed Oct 22 21:18:15 2025 -0700	fixed some memory leaks and output issues
+a42d7e7	Gabriel Atwood	Wed Oct 22 20:54:13 2025 -0700	Changed to Response struct and fixed arrays that werent allocated dynamically
+73cf280	Gabriel Atwood	Wed Oct 22 19:35:24 2025 -0700	Arranged functions into proper .c and .h files to be compiled with make, also adjusted output
+a350246	Gabriel Atwood	Tue Oct 21 15:46:03 2025 -0700	adjusted original survey.c to fit new paramaters and output
+364937f	Roberto Bittencourt	Thu Oct 2 19:57:55 2025 -0700	Added initial files
+8848eea	Roberto Bittencourt	Fri Oct 3 02:52:22 2025 +0000	Initial commit
+
+
+No use of global variables: 5/5 points
+Appropriate use of struct types: 10/10 points
+Appropriate use of dynamic memory:10 /10 points
+Code modularization:5 /5 points
+File modularization: 5/5 points
+Documentation:5 /5 points
+Compilation standards:5 /5 points
+Version Control: 5/5 points
+Total:50 /50 points
